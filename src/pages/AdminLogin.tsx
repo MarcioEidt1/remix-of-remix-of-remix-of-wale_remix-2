@@ -32,14 +32,13 @@ const AdminLogin = () => {
     // Legacy hardcoded master alias
     if (input.toLowerCase() === "prospectsystem") {
       loginEmail = "prospectsystem@prospect.system";
-    } else if (!input.includes("@")) {
-      // Username — resolve to auth email via public RPC
-      const { data: resolved } = await supabase.rpc("resolve_login_email", { _login: input });
-      if (resolved) loginEmail = resolved as string;
     } else {
-      // Email — could be the recovery_email; try to resolve to auth email
-      const { data: resolved } = await supabase.rpc("resolve_login_email", { _login: input });
-      if (resolved) loginEmail = resolved as string;
+      // Resolve username/recovery-email -> auth email via rate-limited edge function
+      const { data: resolved } = await supabase.functions.invoke("resolve-login", {
+        body: { login: input },
+      });
+      const email = (resolved as { email?: string } | null)?.email;
+      if (email) loginEmail = email;
     }
 
     const { error } = await signIn(loginEmail, password);
