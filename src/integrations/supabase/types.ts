@@ -500,6 +500,7 @@ export type Database = {
         }
         Returns: boolean
       }
+      is_master_admin: { Args: { _user_id: string }; Returns: boolean }
       resolve_login_email: { Args: { _login: string }; Returns: string }
       resolve_recovery_email: { Args: { _login: string }; Returns: string }
     }
