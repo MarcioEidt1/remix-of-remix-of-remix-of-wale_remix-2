@@ -1,0 +1,1 @@
+INSERT INTO site_settings (key, value) VALUES ('address', 'R. Germano Basler, 721 - Jardim Dona Leopoldina | Porto Alegre - RS') ON CONFLICT (key) DO NOTHING;
