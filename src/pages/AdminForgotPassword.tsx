@@ -15,12 +15,13 @@ const AdminForgotPassword = () => {
     setError("");
     setSubmitting(true);
 
-    // Resolve login (username or email) to the actual recovery email
-    const { data: recoveryEmail } = await supabase.rpc("resolve_recovery_email", {
-      _login: email.trim(),
+    // Resolve login -> recovery email via rate-limited edge function
+    const { data: resolved } = await supabase.functions.invoke("resolve-login", {
+      body: { login: email.trim(), mode: "recovery" },
     });
+    const recoveryEmail = (resolved as { email?: string } | null)?.email;
 
-    const target = (recoveryEmail as string) || email.trim();
+    const target = recoveryEmail || email.trim();
 
     if (!target.includes("@") || target.endsWith("@prospect.system")) {
       setSubmitting(false);
