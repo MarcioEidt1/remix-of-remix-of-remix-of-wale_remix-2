@@ -23,7 +23,11 @@ const VehicleDetails = () => {
   const { data: vehicle, isLoading } = useQuery({
     queryKey: ["vehicle-detail", id],
     queryFn: async () => {
-      const { data, error } = await supabase.from("vehicles").select("*").eq("id", id!).single();
+      const { data, error } = await supabase
+        .from("vehicles")
+        .select("id, brand, model, version, display_name, year, year_model, km, fuel, transmission, color, internal_color, doors, power_cv, price, image_url, image_position, highlights, accessories, description, video_url, is_active, status, is_promotion, promotion_price, promotion_label, promotion_until, featured, show_on_website, factory_warranty_date, created_at, updated_at")
+        .eq("id", id!)
+        .single();
       if (error) throw error;
 
       const { data: imgs } = await supabase
