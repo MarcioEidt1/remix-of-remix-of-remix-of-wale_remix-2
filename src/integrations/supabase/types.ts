@@ -218,6 +218,13 @@ export type Database = {
             referencedRelation: "vehicles"
             referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "vehicle_documents_vehicle_id_fkey"
+            columns: ["vehicle_id"]
+            isOneToOne: false
+            referencedRelation: "vehicles_public"
+            referencedColumns: ["id"]
+          },
         ]
       }
       vehicle_expenses: {
@@ -248,6 +255,13 @@ export type Database = {
             columns: ["vehicle_id"]
             isOneToOne: false
             referencedRelation: "vehicles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "vehicle_expenses_vehicle_id_fkey"
+            columns: ["vehicle_id"]
+            isOneToOne: false
+            referencedRelation: "vehicles_public"
             referencedColumns: ["id"]
           },
         ]
@@ -283,6 +297,13 @@ export type Database = {
             columns: ["vehicle_id"]
             isOneToOne: false
             referencedRelation: "vehicles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "vehicle_images_vehicle_id_fkey"
+            columns: ["vehicle_id"]
+            isOneToOne: false
+            referencedRelation: "vehicles_public"
             referencedColumns: ["id"]
           },
         ]
@@ -324,6 +345,13 @@ export type Database = {
             columns: ["vehicle_id"]
             isOneToOne: false
             referencedRelation: "vehicles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "vehicle_movements_vehicle_id_fkey"
+            columns: ["vehicle_id"]
+            isOneToOne: false
+            referencedRelation: "vehicles_public"
             referencedColumns: ["id"]
           },
         ]
@@ -486,7 +514,111 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      vehicles_public: {
+        Row: {
+          accessories: string[] | null
+          brand: string | null
+          color: string | null
+          created_at: string | null
+          description: string | null
+          display_name: string | null
+          doors: number | null
+          factory_warranty_date: string | null
+          featured: boolean | null
+          fuel: string | null
+          highlights: string[] | null
+          id: string | null
+          image_position: string | null
+          image_url: string | null
+          internal_color: string | null
+          is_active: boolean | null
+          is_promotion: boolean | null
+          km: number | null
+          model: string | null
+          power_cv: string | null
+          price: number | null
+          promotion_label: string | null
+          promotion_price: number | null
+          promotion_until: string | null
+          show_on_website: boolean | null
+          status: string | null
+          transmission: string | null
+          updated_at: string | null
+          version: string | null
+          video_url: string | null
+          year: number | null
+          year_model: number | null
+        }
+        Insert: {
+          accessories?: string[] | null
+          brand?: string | null
+          color?: string | null
+          created_at?: string | null
+          description?: string | null
+          display_name?: string | null
+          doors?: number | null
+          factory_warranty_date?: string | null
+          featured?: boolean | null
+          fuel?: string | null
+          highlights?: string[] | null
+          id?: string | null
+          image_position?: string | null
+          image_url?: string | null
+          internal_color?: string | null
+          is_active?: boolean | null
+          is_promotion?: boolean | null
+          km?: number | null
+          model?: string | null
+          power_cv?: string | null
+          price?: number | null
+          promotion_label?: string | null
+          promotion_price?: number | null
+          promotion_until?: string | null
+          show_on_website?: boolean | null
+          status?: string | null
+          transmission?: string | null
+          updated_at?: string | null
+          version?: string | null
+          video_url?: string | null
+          year?: number | null
+          year_model?: number | null
+        }
+        Update: {
+          accessories?: string[] | null
+          brand?: string | null
+          color?: string | null
+          created_at?: string | null
+          description?: string | null
+          display_name?: string | null
+          doors?: number | null
+          factory_warranty_date?: string | null
+          featured?: boolean | null
+          fuel?: string | null
+          highlights?: string[] | null
+          id?: string | null
+          image_position?: string | null
+          image_url?: string | null
+          internal_color?: string | null
+          is_active?: boolean | null
+          is_promotion?: boolean | null
+          km?: number | null
+          model?: string | null
+          power_cv?: string | null
+          price?: number | null
+          promotion_label?: string | null
+          promotion_price?: number | null
+          promotion_until?: string | null
+          show_on_website?: boolean | null
+          status?: string | null
+          transmission?: string | null
+          updated_at?: string | null
+          version?: string | null
+          video_url?: string | null
+          year?: number | null
+          year_model?: number | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       has_permission: {
