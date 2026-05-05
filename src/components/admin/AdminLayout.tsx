@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
-import { Car, Image, MessageSquare, LogOut, LayoutDashboard, Globe, Palette, Users, Settings, ArrowLeftRight, FileBarChart, FileText, Star, Download, HardDriveDownload, Rss } from "lucide-react";
+import { Car, Image, MessageSquare, LogOut, LayoutDashboard, Globe, Palette, Users, Settings, ArrowLeftRight, FileBarChart, FileText, Star, Download, HardDriveDownload, Rss, DatabaseBackup } from "lucide-react";
 import prospectLogo from "@/assets/prospect-logo.png";
 import RequireRecoveryEmail from "@/components/admin/RequireRecoveryEmail";
 
