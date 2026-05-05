@@ -21,6 +21,7 @@ const allNavItems = [
   { label: "Importar dados", href: "/admin/import", icon: Download, permission: "import" },
   { label: "Feeds Catálogo", href: "/admin/feeds", icon: Rss, permission: "feeds" },
   { label: "Backup", href: "/admin/backup", icon: HardDriveDownload, permission: "backup" },
+  { label: "Exportar Dados", href: "/admin/data-export", icon: DatabaseBackup, permission: "__master__" },
 ];
 
 const AdminLayout = ({ children }: { children: React.ReactNode }) => {
