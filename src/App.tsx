@@ -64,6 +64,7 @@ const App = () => (
             <Route path="/admin/import" element={<AdminImport />} />
             <Route path="/admin/feeds" element={<AdminFeeds />} />
             <Route path="/admin/backup" element={<AdminBackup />} />
+            <Route path="/admin/data-export" element={<AdminDataExport />} />
             <Route path="/politica-de-privacidade" element={<PrivacyPolicy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
