@@ -25,6 +25,7 @@ import AdminTestimonials from "./pages/admin/AdminTestimonials.tsx";
 import AdminImport from "./pages/admin/AdminImport.tsx";
 import AdminBackup from "./pages/admin/AdminBackup.tsx";
 import AdminFeeds from "./pages/admin/AdminFeeds.tsx";
+import AdminDataExport from "./pages/admin/AdminDataExport.tsx";
 import GoogleScripts from "./components/GoogleScripts.tsx";
 import FaviconManager from "./components/FaviconManager.tsx";
 import VehicleDetails from "./pages/VehicleDetails.tsx";
@@ -63,6 +64,7 @@ const App = () => (
             <Route path="/admin/import" element={<AdminImport />} />
             <Route path="/admin/feeds" element={<AdminFeeds />} />
             <Route path="/admin/backup" element={<AdminBackup />} />
+            <Route path="/admin/data-export" element={<AdminDataExport />} />
             <Route path="/politica-de-privacidade" element={<PrivacyPolicy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

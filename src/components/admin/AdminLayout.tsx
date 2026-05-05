@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
-import { Car, Image, MessageSquare, LogOut, LayoutDashboard, Globe, Palette, Users, Settings, ArrowLeftRight, FileBarChart, FileText, Star, Download, HardDriveDownload, Rss } from "lucide-react";
+import { Car, Image, MessageSquare, LogOut, LayoutDashboard, Globe, Palette, Users, Settings, ArrowLeftRight, FileBarChart, FileText, Star, Download, HardDriveDownload, Rss, DatabaseBackup } from "lucide-react";
 import prospectLogo from "@/assets/prospect-logo.png";
 import RequireRecoveryEmail from "@/components/admin/RequireRecoveryEmail";
 
@@ -21,6 +21,7 @@ const allNavItems = [
   { label: "Importar dados", href: "/admin/import", icon: Download, permission: "import" },
   { label: "Feeds Catálogo", href: "/admin/feeds", icon: Rss, permission: "feeds" },
   { label: "Backup", href: "/admin/backup", icon: HardDriveDownload, permission: "backup" },
+  { label: "Exportar Dados", href: "/admin/data-export", icon: DatabaseBackup, permission: "__master__" },
 ];
 
 const AdminLayout = ({ children }: { children: React.ReactNode }) => {
