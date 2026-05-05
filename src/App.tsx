@@ -25,6 +25,7 @@ import AdminTestimonials from "./pages/admin/AdminTestimonials.tsx";
 import AdminImport from "./pages/admin/AdminImport.tsx";
 import AdminBackup from "./pages/admin/AdminBackup.tsx";
 import AdminFeeds from "./pages/admin/AdminFeeds.tsx";
+import AdminDataExport from "./pages/admin/AdminDataExport.tsx";
 import GoogleScripts from "./components/GoogleScripts.tsx";
 import FaviconManager from "./components/FaviconManager.tsx";
 import VehicleDetails from "./pages/VehicleDetails.tsx";
